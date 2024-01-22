@@ -1,0 +1,25 @@
+
+mat-card{
+  max-width: 80%;
+  margin: 2rem auto;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.loading-spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  background: #eeeeee;
+}
+
+.curso{
+  background-color: #d4bff9;;
+  border-radius: 3px;
+}
+

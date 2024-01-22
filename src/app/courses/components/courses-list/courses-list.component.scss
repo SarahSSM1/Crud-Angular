@@ -1,0 +1,19 @@
+.mat-table{
+  overflow: auto;
+  max-height: 600px;
+}
+
+mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column-category.mat-column-category {
+  margin-right: -25px;
+}
+
+.action-column {
+  flex: 0 0 125px;
+}
+
+.action-column-header {
+  flex: 0 0 100px;
+}
+
+
+

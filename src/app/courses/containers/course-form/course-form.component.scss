@@ -1,0 +1,27 @@
+mat-card{
+  max-width: 80%;
+  margin: 2em auto;
+  border-radius: 4px;
+}
+
+mat-toolbar{
+  border-radius: 4px;
+  background-color: rgb(188, 156, 227);
+}
+
+mat-card-actions{
+  justify-content: center;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.sup{
+  margin-top: 20px
+}
+
+.min-width{
+  width: 100%;
+  min-width: 150px;
+}
