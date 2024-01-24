@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../../model/course';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-list',
@@ -10,16 +9,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CoursesListComponent {
 
   @Input() courses: Course[] = [];
-  @Output() add = new EventEmitter(false)
+  @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
-  readonly displayedColumns = ['name', 'category', 'actions'];
-
+  readonly displayedColumns = [ 'name', 'category', 'actions'];
 
   constructor() { }
 
-  ngOnInit(){ }
+  ngOnInit(){console.log(this.edit)}
 
   onAdd(){
     this.add.emit(true);
+  }
+
+  onEdit(course: Course){
+    this.edit.emit(course);
+
+    console.log(course)
   }
 }

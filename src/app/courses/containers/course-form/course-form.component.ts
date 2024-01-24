@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class CourseFormComponent {
 
   form = this.formBuilder.group({
+    id: [''],
     name: [''],
     category: ['']
   });

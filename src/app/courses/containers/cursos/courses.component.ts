@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Course } from '../../model/course';
 import { CoursesService } from '../../services/courses.service';
 import { Observable, catchError, of } from 'rxjs';
@@ -41,6 +41,11 @@ export class CoursesComponent {
 
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.route})
+  }
+
+  onEdit(course: Course){
+    this.router.navigate(['edit', course.id], {relativeTo: this.route})
+
   }
 
 }

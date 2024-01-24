@@ -10,7 +10,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +20,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-
-
   ],
   bootstrap: [AppComponent]
 })
