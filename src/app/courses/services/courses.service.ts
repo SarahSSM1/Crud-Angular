@@ -16,7 +16,7 @@ private readonly API = 'api/courses';
     return this.httpClient.get<Course[]>(this.API)
     .pipe(
       first(),
-      delay(3000),
+      delay(2000),
       tap(courses => console.log(courses))
     );
   }
@@ -26,7 +26,19 @@ private readonly API = 'api/courses';
   }
 
   save(record: Partial<Course>){
-  return this.httpClient.post<Course>(this.API, record);
+    if(record.id){
+      return this.update(record);
+    }
+    return this.create(record);
+  }
+
+  private create(record: Partial<Course>){
+    return this.httpClient.post<Course>(this.API, record);
+  }
+
+
+  private update(record: Partial<Course>){
+    return this.httpClient.put<Course>(`${this.API}/${record.id}`, record);
   }
 
 }
