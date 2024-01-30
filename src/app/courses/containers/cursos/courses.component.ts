@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-courses',
@@ -55,6 +56,17 @@ export class CoursesComponent {
   }
 
   onRemove(course: Course) {
+    // const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    //   data: 'Deseja remover esse curso?',
+    // });
+
+    // dialogRef.afterClosed().subscribe((result: boolean) => {
+
+    // });
+
+
+
+
     this.coursesService.remove(course.id).subscribe({
       next: () => {
         this.refresh();
