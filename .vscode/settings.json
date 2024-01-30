@@ -3,6 +3,7 @@
         "adicionar",
         "cancelando",
         "Cancelar",
+        "carregar",
         "Categoria",
         "Configurações",
         "Curso",
@@ -12,6 +13,7 @@
         "falha",
         "novamente",
         "sucesso",
+        "tentar",
         "tente"
     ],
     "workbench.colorCustomizations": {

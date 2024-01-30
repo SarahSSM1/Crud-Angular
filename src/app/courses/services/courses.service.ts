@@ -41,4 +41,8 @@ private readonly API = 'api/courses';
     return this.httpClient.put<Course>(`${this.API}/${record.id}`, record);
   }
 
+  remove(id: string){
+    return this.httpClient.delete<Course>(`${this.API}/${id}`);
+  }
+
 }
