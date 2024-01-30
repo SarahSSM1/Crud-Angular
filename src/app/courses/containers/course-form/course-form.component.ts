@@ -49,11 +49,11 @@ export class CourseFormComponent {
   }
 
   private onSuccess(){
-    this.snackBar.open('Curso salvo com sucesso', '', {duration: 5000});
+    this.snackBar.open('Curso salvo com sucesso', '', {duration: 3000});
     this.onCancel();
   }
 
   private onError(){
-    this.snackBar.open('Erro ao salvar curso.', '', {duration: 5000})
+    this.snackBar.open('Erro ao salvar curso.', '', {duration: 3000})
   }
 }
