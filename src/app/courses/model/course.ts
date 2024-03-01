@@ -1,5 +1,8 @@
+import { Lesson } from "./lesson";
+
 export interface Course {
-  id: any;
+  _id: any;
   name: string;
   category: string;
+  lessons: Lesson[];
 }

@@ -26,7 +26,7 @@ private readonly API = 'api/courses';
   }
 
   save(record: Partial<Course>){
-    if(record.id){
+    if(record._id){
       return this.update(record);
     }
     return this.create(record);
@@ -38,7 +38,7 @@ private readonly API = 'api/courses';
 
 
   private update(record: Partial<Course>){
-    return this.httpClient.put<Course>(`${this.API}/${record.id}`, record);
+    return this.httpClient.put<Course>(`${this.API}/${record._id}`, record);
   }
 
   remove(id: string){

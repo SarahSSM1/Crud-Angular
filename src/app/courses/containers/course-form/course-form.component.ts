@@ -15,7 +15,7 @@ import { Course } from '../../model/course';
 export class CourseFormComponent {
 
   form = this.formBuilder.group({
-    id: [''],
+    _id: [''],
     name: ['',  [Validators.required,
       Validators.minLength(3),
       Validators.maxLength(100)]],
@@ -35,7 +35,7 @@ export class CourseFormComponent {
   ngOnInit(){
     const course: Course = this.route.snapshot.data['course'];
     this.form.setValue({
-      id: course.id,
+      _id: course._id,
       name: course.name,
       category: course.category
     })
@@ -74,7 +74,7 @@ export class CourseFormComponent {
     if(field?.hasError('maxlength')){
       const requiredLength = field.errors ? field.errors['maxlength']['requiredLength'] : 100;
       return `Tamanho máximo precisa ser de ${requiredLength} caracteres.`;
-    } 
+    }
 
     return 'Campo inválido'
   }
