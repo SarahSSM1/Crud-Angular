@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators } from '@angular/forms';
 import { CoursesService } from '../../services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
@@ -48,6 +48,10 @@ export class CourseFormComponent {
        name: [lesson.name],
        youtubeUrl: [lesson.youtubeUrl]
     });
+  }
+
+  getLessonsFormArray(){
+    return (<UntypedFormArray>this.form.get('lessons')).controls;
   }
 
   onSubmit(){
