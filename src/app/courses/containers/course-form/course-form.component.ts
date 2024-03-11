@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../model/course';
 import { Lesson } from '../../model/lesson';
+import { FormUtilsService } from 'src/app/shared/form/form-utils.service';
 
 
 @Component({
@@ -17,8 +18,12 @@ export class CourseFormComponent {
 
   form!: FormGroup;
 
-  constructor( private formBuilder: NonNullableFormBuilder, private service: CoursesService,
-    private snackBar: MatSnackBar, private location: Location, private route: ActivatedRoute) {}
+  constructor( private formBuilder: NonNullableFormBuilder,
+    private service: CoursesService,
+    private snackBar: MatSnackBar,
+    private location: Location,
+    private route: ActivatedRoute,
+    public formUtils: FormUtilsService) {}
 
   ngOnInit(){
     const course: Course = this.route.snapshot.data['course'];
@@ -73,7 +78,7 @@ export class CourseFormComponent {
       this.service.save(this.form.value)
         .subscribe(result => this.onSuccess(), error => this.onError());
     } else {
-      alert('formulario invalido')
+      this.formUtils.validateAllFormFields(this.form);
     }
   }
 
@@ -109,11 +114,5 @@ export class CourseFormComponent {
 
     return 'Campo inválido'
   }
-
-  isFormArrayRequired(){
-    const lessons = this.form.get('lessons') as UntypedFormArray;
-    return !lessons.valid && lessons.hasError('required') && lessons.touched;
-  }
-
 
 }
