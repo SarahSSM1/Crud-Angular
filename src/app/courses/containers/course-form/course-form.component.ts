@@ -55,7 +55,7 @@ export class CourseFormComponent {
         Validators.maxLength(100)]],
        youtubeUrl: [lesson.youtubeUrl, [Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(13)]]
+        Validators.maxLength(20)]]
     });
   }
 
